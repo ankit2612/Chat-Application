@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">PlusConnect</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_chat">Chats</string>
+    <string name="action_search">Search</string>
+    <string name="action_contacts">Contacts</string>
+</resources>
