@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:fillViewport="true"
+    tools:context="com.plusconnect.settings.privacy.Privacy">
+
+    <!--Including Header-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view1">
+
+        <!-- Privacy Form Starts Here-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <!--&lt;!&ndash; Show Profile Picture Label &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/linearProfilePicture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgProfilePicture"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="Profile Picture"
+                    android:src="@mipmap/ic_settings_profile" />
+
+                <TextView
+                    style="@style/MediumLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:padding="5dp"
+                    android:text="Show Profile Picture to trusted network only" />
+
+                <CheckBox
+                    android:id="@+id/chkProfilePicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="false" />
+            </LinearLayout>
+
+            <View style="@style/ViewLine_Style" />
+
+            &lt;!&ndash; Blocked Contacts Label &ndash;&gt;
+            <LinearLayout
+                android:id="@+id/layoutBlockedContacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgBlockedContacts"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="BlockedContacts"
+                    android:src="@mipmap/ic_settings_blocked_contacts" />
+
+                <TextView
+                    style="@style/MediumLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:padding="5dp"
+                    android:text="Blocked contacts" />
+            </LinearLayout>
+
+            <View style="@style/ViewLine_Style" />-->
+
+            <!-- Show Last Seen Label -->
+            <LinearLayout
+                android:id="@+id/linearLastSeen"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/metrics_60"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgLastSeen"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="Show Last Seen"
+                    android:src="@mipmap/ic_settings_lastseen" />
+
+                <TextView
+                    android:id="@+id/tvLastSeen"
+                    style="@style/MediumLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:padding="5dp"
+                    android:text="Show Last Seen" />
+
+                <CheckBox
+                    android:id="@+id/chkLastSeen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+            <View style="@style/ViewLine_Style" />
+
+            <!-- Show Read Confirmation Label -->
+            <LinearLayout
+                android:id="@+id/linearReadConfirm"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/metrics_60"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgReadConfirm"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="Profile Picture"
+                    android:src="@mipmap/ic_settings_read_confirm" />
+
+                <TextView
+                    android:id="@+id/tvReadConfirmation"
+                    style="@style/MediumLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:padding="5dp"
+                    android:text="Show Read Confirmation" />
+
+                <CheckBox
+                    android:id="@+id/chkReadConfirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

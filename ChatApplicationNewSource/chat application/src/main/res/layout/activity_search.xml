@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/windowBackground"
+    >
+
+    <include
+        android:id="@+id/search_header"
+        layout="@layout/header_back_clear"
+        android:layout_alignParentTop="true" />
+
+    <ListView
+        android:layout_below="@id/search_header"
+        android:id="@+id/search_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</RelativeLayout>

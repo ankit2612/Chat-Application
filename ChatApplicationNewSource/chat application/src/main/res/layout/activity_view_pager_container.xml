@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    tools:context="nectotech.com.plusconnect.ViewPagerContainer">
+
+    <!--Header-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metrics_56" />
+
+    <View
+        android:id="@+id/header_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metrics_4"
+        android:layout_below="@id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_shadow"
+        android:layout_above="@+id/footer"/>
+
+    <!--Footer-->
+    <include
+        android:id="@+id/footer"
+        layout="@layout/activity_footer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

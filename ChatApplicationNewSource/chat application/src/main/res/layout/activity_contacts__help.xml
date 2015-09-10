@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.plusconnect.contact.searchcontacts.Contacts_Help">
+
+    <!--Including Header-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:layout_below="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/MediumLabelStyle"
+                android:text="What is visible to others ?" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                style="@style/SmallLabelTextStyle"
+                android:text="@string/tv_ans_visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                style="@style/MediumLabelStyle"
+                android:text="What is hidden from others ?" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                style="@style/SmallLabelTextStyle"
+                android:text="@string/tv_ans_hidden" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

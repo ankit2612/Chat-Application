@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ColorPrimary">#ECEDF0</color>
+    <color name="ColorPrimaryDark">#FFFFFF</color>
+    <color name="textColorPrimary">#2196F3</color>
+    <color name="tabsScrollColor">#2196F3</color>
+    <color name="tabsBackgroundColor">#DEE0E5</color>
+
+
+
+    <color name="colorPrimaryDark">#DADBE1</color>
+    <color name="colorPrimary">#ECEDF0</color>
+    <color name="windowBackground">#F9F9FB</color>
+    <color name="textColor">#000000</color>
+    <color name="footerColor">#ECEDF0</color>
+
+    <!--Settings+contacts colors-->
+    <color name="button_back">#42A5F5</color>
+    <color name="button_blue">#34AADC</color>
+    <color name="textTickColor">#34AADC</color>
+    <color name="button_gray">#D1D0CE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="error_msg">#E53935</color>
+    <color name="text_small">#9E9E9E</color>
+    <color name="text_darkgrey">#B3B3B3</color>
+    <color name="text_startup_page">#616161</color>
+    <color name="viewColor">#E0E0E0</color>
+    <color name="chatbackground">#FCFCFC</color>
+
+    <!--HOME-->
+    <color name="gray_Background">#DFE3E8</color>
+
+    <!--CHAT-->
+    <color name="header_bg">#F7F7F7</color>
+    <color name="alpha">#00FFFFFF</color>
+    <color name="chat_icons">#4F4F4F</color>
+    <color name="chat_box_bg">#E7E7E7</color>
+    <color name="chat_attachment_bg">#A3A3A3</color>
+    <color name="group_info_bg">#EDEDED</color>
+    <color name="button_red">#E3413E</color>
+    <color name="slider_tabs">#A3A3A3</color>
+    <color name="header_blue">#34AADC</color>
+    <color name="header_search_bar_bg">#F1F1F1</color>
+
+    <color name="textColorDarkGray">#80000000</color>
+
+    <color name="textColorLightBlack">#DE000000</color>
+    <color name="textColorLightGray">#66000000</color>
+    <color name="textColorLight_teice_gray">#1A000000</color>
+</resources>

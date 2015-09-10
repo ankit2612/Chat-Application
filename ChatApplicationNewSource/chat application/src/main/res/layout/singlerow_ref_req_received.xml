@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/metrics_16"
+    android:background="#dfe3e8"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/metrics_12"
+    android:paddingRight="@dimen/metrics_12"
+    android:paddingTop="@dimen/metrics_12">
+
+    <LinearLayout
+        android:id="@+id/singleRowRefReqReceived"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/card_background"
+        android:orientation="vertical"
+        android:padding="@dimen/metrics_8">
+
+        <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+            android:id="@+id/tvReqReceived"
+            style="@style/SmallLabelMultilineTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Referral Text" />
+
+        <View
+            style="@style/ViewLine_Style"
+            android:layout_marginTop="@dimen/metrics_2" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/metrics_16"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                style="@style/BlueMediumText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Designation" />
+
+            <TextView
+                android:id="@+id/tvTimeStamp"
+                style="@style/TimeStampStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tvTitle"
+                android:layout_alignParentRight="true"
+                android:text="Timestamp" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/ViewLine_Style"
+            android:layout_marginTop="@dimen/metrics_2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/metrics_6"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/metrics_4"
+                android:orientation="vertical">
+
+                <nectotech.com.plusconnect.extention.utils.RoundedImageView
+                    android:id="@+id/ivRefReqRec"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_default_profileimage" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Name" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/bigArrowImageView"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="4dp"
+                android:layout_marginTop="@dimen/metrics_12"
+                android:src="@mipmap/ic_big_arrow" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/metrics_4"
+                android:orientation="vertical">
+
+                <nectotech.com.plusconnect.extention.utils.RoundedImageView
+                    android:id="@+id/ivRefReqRec2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_default_profileimage" />
+
+                <TextView
+                    android:id="@+id/tvName2"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Name" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/bigArrowImageView2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:padding="4dp"
+                android:layout_marginTop="@dimen/metrics_12"
+                android:src="@mipmap/ic_big_arrow" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/metrics_4"
+                android:orientation="vertical">
+
+                <nectotech.com.plusconnect.extention.utils.RoundedImageView
+                    android:id="@+id/ivRefReqRec3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_default_profileimage" />
+
+                <TextView
+                    android:id="@+id/tvName3"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Name" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/bigArrowImageView3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/metrics_16"
+                android:src="@mipmap/ic_big_arrow"
+                android:visibility="gone" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/metrics_4"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <nectotech.com.plusconnect.extention.utils.RoundedImageView
+                    android:id="@+id/ivRefReqRec4"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_default_profileimage" />
+
+                <TextView
+                    android:id="@+id/tvName4"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Name" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/bigArrowImageView4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/metrics_16"
+                android:src="@mipmap/ic_big_arrow"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/metrics_4"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <nectotech.com.plusconnect.extention.utils.RoundedImageView
+                    android:id="@+id/ivRefReqRec5"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_default_profileimage" />
+
+                <TextView
+                    android:id="@+id/tvName5"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Name" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <View
+            style="@style/ViewLine_Style"
+            android:layout_marginTop="@dimen/metrics_2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <nectotech.com.plusconnect.extention.utils.RoundedImageView
+                android:id="@+id/ivTargetPerson"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="@dimen/metrics_6"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_default_profileimage" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/metrics_8"
+                android:layout_marginTop="@dimen/metrics_14"
+                android:orientation="vertical">
+
+                <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+                    android:id="@+id/tvTargetName"
+                    style="@style/TargetSmallLabelText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Target Name" />
+
+                <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoMediumTextView
+                    android:id="@+id/tvTargetDesignation"
+                    style="@style/TargetDesignationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Target Designation" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/ViewLine_Style"
+            android:layout_marginTop="@dimen/metrics_8" />
+
+        <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+            android:id="@+id/tvReferralTip"
+            style="@style/SmallLabelMultilineTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/metrics_10"
+            android:text="@string/txtReferralTip" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textTokenKey">token</string>
+    <string name="textTokenValue">test</string>
+    <!--Chat Service-->
+    <string name="textUser">user</string>
+    <string name="textTime">time</string>
+
+</resources>
