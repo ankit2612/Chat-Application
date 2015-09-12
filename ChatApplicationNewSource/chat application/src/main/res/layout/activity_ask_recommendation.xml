@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    tools:context="com.plusconnect.contact.recommendations.ask_recommendations.AskRecommendation">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+        <!-- Ask for Recommendations Form -->
+        <LinearLayout
+            android:id="@+id/AskRecommendations_Form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <TextView
+                style="@style/MediumLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="For what skills do you want to be recommended for?" />
+
+            <View style="@style/ViewLine_Style" />
+
+            <!-- Skills List View-->
+            <ListView
+                android:id="@+id/listViewSkills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View style="@style/ViewLine_Style" />
+
+            <!-- TextView Who do you want to ask-->
+            <TextView
+                style="@style/MediumLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Who do you want to ask?" />
+
+            <TextView
+                style="@style/SmallLabelTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="(You can add up to 3 people)" />
+
+            <View
+                style="@style/ViewLine_Style"
+                android:layout_marginTop="@dimen/metrics_10" />
+
+            <!-- Ask Contacts List View-->
+            <ListView
+                android:id="@+id/listViewContacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                style="@style/ViewLine_Style"
+                android:layout_marginBottom="@dimen/metrics_8" />
+
+            <!-- Add recipients Layout-->
+            <LinearLayout
+                android:id="@+id/layoutAddRecipients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="7dp"
+                    android:src="@mipmap/ic_action_add" />
+
+                <TextView
+                    style="@style/MediumLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="Add recipients..." />
+
+            </LinearLayout>
+
+            <View style="@style/ViewLine_Style" />
+
+            <!-- Write Message TextView-->
+            <TextView
+                style="@style/MediumLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="20dp"
+                android:text="Write a message" />
+
+            <!-- Message EditText-->
+            <EditText
+                android:id="@+id/editTextMessage"
+                style="@style/SmallLabelTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_style"
+                android:gravity="start"
+                android:inputType="textMultiLine"
+                android:padding="7dp"
+                android:text="I\'m writing to ask if you would write a brief recommendation of my work that I can include on my PlusConnect profile. If you have any questions, please let me know.\n\n Thanks in advance for your help.\n\n-User" />
+
+            <!-- Ask Recommendations button-->
+            <LinearLayout
+                android:id="@+id/layoutAskRecommButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <!-- Send button-->
+                <Button
+                    android:id="@+id/btnSend"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/smallbluebutton"
+                    android:text="Send"
+                    android:textColor="@color/white" />
+
+                <!-- Cancel button-->
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/smallgraybutton"
+                    android:text="Cancel"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:background="@color/header_bg">
+
+    <!--Header Starts-->
+    <ImageButton
+        android:id="@+id/hc_back_ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/back_btn"
+        android:src="@drawable/ic_action_back" />
+
+    <nectotech.com.plusconnect.extention.utils.RoundedImageView
+        android:id="@+id/hc_profile_ImageButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@id/hc_back_ImageButton"
+        android:background="@color/header_bg"
+        android:contentDescription="@string/profile_pic"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_action_profile_img"
+        android:clickable="true"
+        android:layout_marginTop="2.5dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/hc_profile_ImageButton"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoMediumTextView
+            android:id="@+id/hc_user_name_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:textSize="16sp"
+            android:textColor="#DE000000"/>
+
+        <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+            android:id="@+id/hc_last_seen_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/hc_user_name_TextView"
+            android:layout_below="@id/hc_user_name_TextView"
+            android:text="@string/last_seen"
+            android:textSize="14sp"
+            android:textColor="#80000000"/>
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/hc_overflow_ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_action_overflow" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/toolbar_shadow_view" />
+    <!--Header Ends-->
+</RelativeLayout>

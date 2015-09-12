@@ -1,0 +1,51 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/main_root_view_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/chatbackground"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/chat_header"
+            layout="@layout/header_chat"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:elevation="10dp" />
+
+
+        <ListView
+            android:id="@+id/chat_window_ListView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:dividerHeight="7dp"
+            android:paddingBottom="1dp"
+            android:paddingTop="1dp"
+            android:background="#d1d4d8"
+            android:transcriptMode="alwaysScroll" />
+
+        <include
+            android:id="@+id/chat_box"
+            layout="@layout/component_chat_message_box"
+            android:layout_width="match_parent"
+            android:layout_height="64dp" />
+
+        <include
+            layout="@layout/component_chat_multimedia_window"
+            android:layout_width="match_parent"
+            android:layout_height="201dp" />
+
+        <FrameLayout
+            android:id="@+id/emojicons_FrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

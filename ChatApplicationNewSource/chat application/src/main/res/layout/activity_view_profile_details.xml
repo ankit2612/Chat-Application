@@ -1,0 +1,312 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.plusconnect.contact.viewprofile.viewProfile_Details">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:orientation="vertical">
+
+            <!-- Layout Profile Name & Profile Image-->
+            <LinearLayout
+                android:id="@+id/layoutProfileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Profile Picture ImageView-->
+                <ImageView
+                    android:id="@+id/imageProfilePhoto"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginRight="3dp"
+                    android:src="@mipmap/ic_default_profileimage"/>
+
+                <!-- layout Basic Details-->
+                <LinearLayout
+                    android:id="@+id/layoutBasicDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="105dp"
+                    android:layout_weight="1"
+                    android:padding="7dp"
+                    android:gravity="start"
+                    android:background="@drawable/card_background"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/ProfileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/MediumLabelStyle"
+                        android:text="Asif Nadaf"/>
+
+                    <TextView
+                        android:id="@+id/ProfileHeadline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/MediumLabelStyle"
+                        android:text="TechLead at Integrati"/>
+
+                    <TextView
+                        android:id="@+id/ProfileRegion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Banglore,India"/>
+
+                    <TextView
+                        android:id="@+id/ProfileIndustry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Information technology,Service "/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Skill & Experstise -->
+            <!--Section Skills & Expertise Layout-->
+            <TextView
+                android:id="@+id/textViewSkillSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                style="@style/MediumLabelStyle"
+                android:text="Skills &amp; Expertise"/>
+
+            <!--SubSection new skill Layout-->
+            <LinearLayout
+                android:id="@+id/layoutSkillSubSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_action_add"
+                    style="@style/Setting_Icons"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="Add a new skill"/>
+            </LinearLayout>
+
+            <!--Skills Detail information Listview-->
+            <ListView
+                android:id="@+id/listSkillDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dp"
+                android:listSelector="@android:color/transparent"
+                android:background="@drawable/card_background"/>
+
+            <!-- Summary Datails -->
+            <!--Summary Layout-->
+            <TextView
+                android:id="@+id/textViewSummarySection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                style="@style/MediumLabelStyle"
+                android:text="Summary"/>
+
+            <!--Summary Details TextView-->
+            <TextView
+                android:id="@+id/textViewSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="false"
+                android:padding="7dp"
+                android:background="@drawable/card_background"
+                style="@style/SmallLabelMultilineTextStyle"
+                android:text="I have over 7 years of work experience in diverse areas."/>
+
+            <!-- Websites Details -->
+            <!--Section Websites Details Layout-->
+            <TextView
+                android:id="@+id/textViewWebsiteSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                style="@style/MediumLabelStyle"
+                android:text="Websites Details"/>
+
+            <!--SubSection new Website Layout-->
+            <LinearLayout
+                android:id="@+id/layoutWebsiteSubSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_action_add"
+                    style="@style/Setting_Icons"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="Add a new website"/>
+            </LinearLayout>
+
+            <!--Website Detail information Listview-->
+            <ListView
+                android:id="@+id/listWebsiteDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dp"
+                android:listSelector="@android:color/transparent"
+                android:background="@drawable/card_background"/>
+
+            <!-- Experience Details -->
+            <!--Section Experience Details Layout-->
+            <TextView
+                android:id="@+id/textViewExperienceSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                style="@style/MediumLabelStyle"
+                android:text="Experience Details"/>
+
+            <!--SubSection new Experience Layout-->
+            <LinearLayout
+                android:id="@+id/layoutExperienceSubSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_action_add"
+                    style="@style/Setting_Icons"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="Add a new job"/>
+            </LinearLayout>
+
+            <!--Experience Detail information Listview-->
+            <ListView
+                android:id="@+id/listExperienceDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dp"
+                android:listSelector="@android:color/transparent"
+                android:background="@drawable/card_background"/>
+
+            <!-- Education Details -->
+            <!--Section Education Details Layout-->
+            <TextView
+                android:id="@+id/textViewEducationSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                style="@style/MediumLabelStyle"
+                android:text="Education Details"/>
+
+            <!--SubSection new Education Layout-->
+            <LinearLayout
+                android:id="@+id/layoutEducationSubSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="0"
+                    android:src="@mipmap/ic_action_add"
+                    style="@style/Setting_Icons"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:text="Add a new school"/>
+            </LinearLayout>
+
+            <!--Education Detail information Listview-->
+            <ListView
+                android:id="@+id/listEducationDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="7dp"
+                android:listSelector="@android:color/transparent"
+                android:background="@drawable/card_background"/>
+
+            <!-- Recommendations Details -->
+            <!--Section Recommendations Details Layout-->
+            <TextView
+                android:id="@+id/txtRecommReceivedSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="7dp"
+                style="@style/MediumLabelStyle"
+                android:text="Recommendations"/>
+
+            <!--SubSection Recommendations Layout-->
+            <LinearLayout
+                android:id="@+id/layoutRecommSubSection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical">
+
+                <!--Recommendations Count TextView-->
+                <TextView
+                    android:id="@+id/txtViewTotalRecomm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <!--Recommendations TextView-->
+                <TextView
+                    android:id="@+id/txtViewRecomm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"/>
+
+                <!--MoreRecommendations Button-->
+                <Button
+                    android:id="@+id/btnMoreRecomm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="More Recommendations"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

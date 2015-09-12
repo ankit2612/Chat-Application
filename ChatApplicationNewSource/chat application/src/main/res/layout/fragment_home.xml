@@ -1,0 +1,145 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/gray_Background"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    tools:context="com.home.Home">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/containerHome"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/referralRequestsReceived"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/metrics_48"
+                android:layout_margin="@dimen/metrics_12"
+                android:background="@drawable/card_background"
+                android:orientation="horizontal">
+
+                <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+                    android:id="@+id/txtReferralRequestsReceived"
+                    style="@style/MediumLabelStyle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/metrics_10"
+                    android:text="Plusconnect requests received" />
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/metrics_8"
+                    android:src="@mipmap/ic_blue_arrow_home" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/referralRequestsSent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/metrics_48"
+                android:layout_marginLeft="@dimen/metrics_12"
+                android:layout_marginRight="@dimen/metrics_12"
+                android:background="@drawable/card_background"
+                android:orientation="horizontal">
+
+                <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+                    android:id="@+id/txtReferralRequestsSent"
+                    style="@style/MediumLabelStyle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/metrics_10"
+                    android:text="Plusconnect requests sent" />
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/metrics_8"
+                    android:src="@mipmap/ic_blue_arrow_home" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llFeeds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/metrics_10"
+                android:orientation="vertical">
+                <!--
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal">
+
+                           <ImageView
+                               android:id="@+id/ivTargetPerson"
+                               android:layout_width="50dp"
+                               android:layout_height="50dp"
+                               android:layout_marginTop="@dimen/metrics_6"
+                               android:scaleType="centerCrop"
+                               android:src="@mipmap/ic_default_profileimage" />
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginLeft="@dimen/metrics_8"
+                               android:layout_marginTop="@dimen/metrics_14"
+                               android:orientation="vertical">
+
+                               <TextView
+                                   android:id="@+id/tvTargetName"
+                                   style="@style/SmallLabelMultilineTextStyle"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Target Name" />
+
+                               <TextView
+                                   android:id="@+id/tvTargetDesignation"
+                                   style="@style/SmallLabelMultilineTextStyle"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:text="Target Designation" />
+                           </LinearLayout>
+
+                       </LinearLayout>
+
+                       <View
+                           style="@style/ViewLine_Style"
+                           android:layout_marginTop="@dimen/metrics_2" />
+
+                       <TextView
+                           android:id="@+id/tvReferralTip"
+                           style="@style/SmallLabelMultilineTextStyle"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginTop="@dimen/metrics_10"
+                           android:text="@string/txtReferralTip" />
+               -->
+                <ListView
+                    android:id="@+id/listFeeds"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
