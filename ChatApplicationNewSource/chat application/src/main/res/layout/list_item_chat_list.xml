@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal"
+    >
+
+    <com.plusconnect.Views.RoundedImageView
+        android:id="@+id/chat_list_profile_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center"
+        android:src="@drawable/ic_action_profile_img"
+         />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/text_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingRight="15dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <com.plusconnect.Views.RobotoMediumTextView
+                    android:id="@+id/chat_list_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textSize="@dimen/text_16"
+                    android:textColor="@color/textColorLightBlack"
+                    />
+
+                <com.plusconnect.Views.RobotoRegularTextView
+                    android:id="@+id/chat_list_time_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textSize="@dimen/text_12"
+                    android:textColor="@color/textColorLightGray"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                >
+
+                <ImageView
+                    android:id="@+id/chat_list_message_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/sent_message_single_tick"
+                    android:visibility="gone"
+
+
+                    android:layout_marginRight="8dp"
+                />
+                <com.plusconnect.Views.RobotoRegularTextView
+                    android:id="@+id/chat_list_message"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+
+                    android:textSize="@dimen/text_14"
+                    android:textColor="@color/textColorDarkGray"
+                     />
+
+
+
+                <com.plusconnect.Views.RobotoRegularTextView
+                    android:id="@+id/chat_list_message_count"
+                    android:layout_width="@dimen/metrics_20"
+                    android:layout_height="@dimen/metrics_20"
+                    android:gravity="center"
+                    android:background="@drawable/circular_blue_background"
+
+
+                    android:layout_gravity="center_vertical"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_8" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/metrics_1"
+            android:layout_alignParentBottom="true"
+            android:background="@color/textColorLight_teice_gray" />
+    </LinearLayout>
+
+
+</LinearLayout>

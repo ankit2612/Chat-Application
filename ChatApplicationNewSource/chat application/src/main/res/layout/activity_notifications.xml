@@ -1,0 +1,272 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/windowBackground"
+    android:fillViewport="true"
+    tools:context="com.plusconnect.settings.notifications.Notifications">
+
+    <!--Including Header-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header">
+
+        <!-- Notification Form Starts Here-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <!-- Vibrate Default Label -->
+            <LinearLayout
+                android:id="@+id/layoutVibrate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgVibrateDefault"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="vibrateDefault"
+                    android:src="@mipmap/ic_settings_vibrate" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtVibrate"
+                        style="@style/MediumLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vibrate - Default" />
+
+                    <TextView
+                        android:id="@+id/txtVibrateMsg"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Vibrate on new message" />
+
+                    <View
+                        style="@style/ViewLine_Style" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- Conversation Tones Label -->
+            <LinearLayout
+                android:id="@+id/LayoutConversationTone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgConversTone"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="Conversation Tones"
+                    android:src="@mipmap/ic_settings_conversation_tones" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtConversTones"
+                        style="@style/MediumLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Conversation Tones" />
+
+                    <TextView
+                        android:id="@+id/PlaySound"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Play Sound for Incoming &amp; Outgoing messages" />
+
+                    <View
+                        style="@style/ViewLine_Style" />
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/chkConversationTone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+            <!-- LED Notification Label -->
+            <LinearLayout
+                android:id="@+id/layoutLEDnotific"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgLEDnotif"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="LED Notification"
+                    android:src="@mipmap/ic_settings_led_notification" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvLedNoti"
+                        style="@style/MediumLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LED Notification" />
+
+                    <TextView
+                        android:id="@+id/tvLedNotiMsg"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Flash the LED on new message" />
+
+                    <View
+                        style="@style/ViewLine_Style" />
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/chkLEDNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+            <!-- Notification Tones - Default Label -->
+            <LinearLayout
+                android:id="@+id/layoutNotificTone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgNotificTone"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="Notification Tones"
+                    android:src="@mipmap/ic_settings_notification_tones" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtNotification"
+                        style="@style/MediumLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notification Tones - Default" />
+
+                    <TextView
+                        android:id="@+id/txtNotificationTones"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Select a sound to play for a new notification" />
+
+                    <View
+                        style="@style/ViewLine_Style"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Contacts Joining Power Connect Label -->
+            <LinearLayout
+                android:id="@+id/LayoutContactsJoining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgContacts"
+                    style="@style/Setting_Icons"
+                    android:contentDescription="Contacts Joining"
+                    android:src="@mipmap/ic_settings_contacts_joining" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvPlusConn"
+                        style="@style/MediumLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Contacts Joining PlusConnect" />
+
+                    <TextView
+                        android:id="@+id/tvPlusConnMsg"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:text="Notify when a contact joins Plus Connect" />
+
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/chkContactJoining"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:clickable="false" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

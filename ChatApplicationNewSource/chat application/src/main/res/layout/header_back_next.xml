@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="#F7F7F7">
+
+    <!--Header Starts-->
+    <ImageButton
+        android:id="@+id/hbn_back_ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_action_back"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/back_btn"/>
+
+    <!--//TODO
+    changed
+    android:background="@drawable/ic_action_back"
+    to
+    android:background="@drawable/ic_login_BackButton"
+    -->
+    <TextView
+        android:id="@+id/hbn_title_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:text="Group List"
+        />
+    <!--//TODO
+    changed
+    android:text="New Group"
+    to
+    android:text="@string/title_text"
+
+    Add
+    android:textAppearance="@style/HeaderTextStyle"/>
+    -->
+    <LinearLayout
+        android:id="@+id/hbn_next_LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingRight="8dp"
+        android:contentDescription="@string/next_btn"
+        >
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/header_blue" />
+
+        <ImageView
+            android:id="@+id/hbn_tick_ImageButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_blue_tick" />
+
+        <TextView
+            android:id="@+id/hbn_next_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textColor="@color/header_blue"
+            android:textSize="@dimen/abc_text_size_body_1_material"/>
+        <!--//TODO
+        changed
+        android:background="@drawable/ic_action_add"/>
+        to
+        android:background="@drawable/ic_Login_overflowMenu"/>
+        -->
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black" />
+
+    <!--Hack for proper display of overflow menu-->
+
+    <View
+        android:id="@+id/hsn_bottom_bar_menu_View"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/black"
+        android:layout_alignParentRight="true"/>
+
+    <!--Ends Here-->
+
+    <!--Header Ends-->
+</RelativeLayout>

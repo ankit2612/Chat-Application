@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.plusconnect.contact.searchcontacts.ShowProfileImage">
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+    <!-- Profile Photo Form Starts Here-->
+    <ImageView
+        android:id="@+id/imgPProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="Profile Image"
+        android:src="@mipmap/ic_default_profileimage" />
+
+</RelativeLayout>

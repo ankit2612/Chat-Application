@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="baseUrl">http://54.68.92.122/v2chat-1.0/ws/rest/</string>
+        <string name="chatServices">chatService/offline</string>
+
+    <string name="timeStampContant">1441635631876</string>
+    <string name="textTick">&#xf00c;</string>
+
+
+    <string name="textFalse">false</string>
+    <string name="textTrue">true</string>
+</resources>

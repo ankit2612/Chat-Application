@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/button_blue"
+    android:orientation="vertical"
+    tools:context="com.plusconnect.settings.help.AboutUs">
+
+    <TextView
+        android:id="@+id/PlusConnectMessengerTextView"
+        style="@style/HeaderTextStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="110dp"
+        android:gravity="center"
+        android:text="Plus Connect Messenger"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/VersionTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PlusConnectMessengerTextView"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Version 1.0"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/PowerTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/VersionTextView"
+        android:gravity="center"
+        android:text="P l u s"
+        android:textColor="@color/white"
+        android:textSize="38dp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/ConnectTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/PowerTextView"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="Connect"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+    <TextView
+        android:id="@+id/NectoTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ConnectTextView"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="\u00a9 2014-Necto Technologies Pvt Ltd."
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/RightsTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ConnectTextView"
+        android:gravity="center"
+        android:text="All rights reserved"
+        android:textColor="@color/white" />
+
+</LinearLayout>

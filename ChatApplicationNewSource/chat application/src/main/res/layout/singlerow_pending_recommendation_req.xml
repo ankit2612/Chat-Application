@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:layout_centerVertical="true">
+
+    <ImageView
+        android:id="@+id/imgProfileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_default_profileimage"/>
+
+    <TextView
+        android:id="@+id/txtProfileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/MediumLabelStyle"
+        android:layout_marginLeft="7dp"
+        android:text="Profile Name"
+        android:layout_toRightOf="@id/imgProfileImage"/>
+
+    <TextView
+        android:id="@+id/txtProfileDesg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SmallLabelMultilineTextStyle"
+        android:layout_marginLeft="7dp"
+        android:singleLine="false"
+        android:text="Profile Designation"
+        android:layout_toRightOf="@id/imgProfileImage"
+        android:layout_below="@id/txtProfileName"/>
+
+    <TextView
+        android:id="@+id/txtWriteRecomm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write"
+        android:paddingLeft="10dp"
+        style="@style/MediumLabelStyle"
+        android:textColor="#34aadc"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"/>
+
+    <View
+        android:id="@+id/viewLineVertical"
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        android:background="#34aadc"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/txtWriteRecomm"/>
+
+    <TextView
+        android:id="@+id/txtIgnoreRecomm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ignore"
+        android:paddingRight="10dp"
+        style="@style/MediumLabelStyle"
+        android:textColor="#34aadc"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/viewLineVertical"/>
+
+</RelativeLayout>

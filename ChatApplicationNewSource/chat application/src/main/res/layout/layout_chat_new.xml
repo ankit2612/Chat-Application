@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metrics_56"
+
+        android:background="@color/header_bg"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        android:clipToPadding="false"
+
+        />
+
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metrics_4"
+        android:background="@drawable/toolbar_shadow_view" />
+
+
+    <FrameLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/chatRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/metrics_60"
+
+            />
+
+
+        <include
+
+            layout="@layout/component_chat_multimedia_window"
+            android:layout_width="match_parent"
+            android:layout_gravity="top"
+
+            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            >
+
+        <include
+
+            android:id="@+id/chat_box"
+            layout="@layout/component_chat_message_box"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/metrics_60"
+
+            />
+            <FrameLayout
+                android:id="@+id/emojicons_FrameLayout"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="@dimen/metric_200" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+
+
+
+
+</LinearLayout>

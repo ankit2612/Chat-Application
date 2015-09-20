@@ -1,0 +1,273 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.plusconnect.settings.profile.editprofile.Education_Details">
+
+    <!--Including Header-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="58dp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header">
+
+        <!--Main Parent Layout-->
+        <LinearLayout
+            android:id="@+id/linearLayout_Parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="7dp"
+            android:orientation="vertical">
+
+            <!--Add a new School-->
+            <TextView
+                android:id="@+id/textViewNewSchool"
+                style="@style/MediumLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Add a new School"
+                android:textSize="20sp" />
+
+            <!-- School Name Label -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/card_background"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txtViewSchoolName"
+                    style="@style/SmallLabelTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2.5"
+                    android:paddingLeft="5dp"
+                    android:text="School" />
+
+                <EditText
+                    android:id="@+id/editTextSchoolName"
+                    style="@style/EditTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7.5"
+                    android:paddingLeft="10dp"
+                    android:background="#FFFFFF"
+                    android:hint="Monjee Institute of Management Studies" />
+            </LinearLayout>
+
+            <!--School Duration Layout-->
+            <LinearLayout
+                android:id="@+id/linearLayoutSchoolDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical">
+
+                <!-- Start Year Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewStartYear"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:paddingLeft="5dp"
+                        android:text="Start Year" />
+
+                    <EditText
+                        android:id="@+id/editTextStartYear"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:background="#FFFFFF"
+                        android:paddingLeft="10dp"
+                        android:focusable="false"
+                        android:hint="2008" />
+                </LinearLayout>
+
+                <View style="@style/ViewLine_Style" />
+                <!-- End Year Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewEndYear"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:paddingLeft="5dp"
+                        android:text="End Year" />
+
+                    <EditText
+                        android:id="@+id/editTextEndYear"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:background="#FFFFFF"
+                        android:paddingLeft="10dp"
+                        android:focusable="false"
+                        android:hint="2010" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Degree Details Layout-->
+            <LinearLayout
+                android:id="@+id/linearLayoutDegree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical">
+
+                <!-- Degree Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewDegree"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="5dp"
+                        android:text="Degree" />
+
+                    <EditText
+                        android:id="@+id/editTextDegree"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:background="#FFFFFF"
+                        android:paddingLeft="10dp"
+                        android:hint="Master of Business Administration" />
+                </LinearLayout>
+
+                <View style="@style/ViewLine_Style" />
+
+                <!-- Field of Study Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewFieldOfStudy"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="3"
+                        android:paddingLeft="5dp"
+                        android:text="Field of Study" />
+
+                    <EditText
+                        android:id="@+id/editTextFieldOfStudy"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:background="#FFFFFF"
+                        android:paddingLeft="10dp"
+                        android:hint="Field of Study" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Description TextView-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/SmallLabelMultilineTextStyle"
+                android:padding="5dp"
+                android:textSize="20sp"
+                android:layout_margin="3dp"
+                android:text="Description"/>
+
+            <!-- Education Description Label -->
+            <EditText
+                android:id="@+id/editTextDescription"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:inputType="textMultiLine"
+                android:paddingLeft="10dp"
+                android:background="@drawable/card_background"
+                android:gravity="start"
+                android:hint=" Enter a description...." />
+
+            <!-- Add button -->
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/smallbluebutton"
+                android:text="Add"
+                android:textColor="@color/white" />
+
+            <!-- Update button-->
+            <LinearLayout
+                android:id="@+id/layoutEducationUpdateButtons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnDeleteAddress"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/smallgraybutton"
+                    android:text="Delete"
+                    android:textColor="@color/textColor" />
+
+                <Button
+                    android:id="@+id/btnUpdateAddress"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/smallbluebutton"
+                    android:text="Update"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

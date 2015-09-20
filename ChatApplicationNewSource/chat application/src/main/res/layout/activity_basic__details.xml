@@ -1,0 +1,355 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="com.plusconnect.settings.profile.editprofile.Basic_Details">
+
+    <!--Including Header-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/activity_header"
+        android:layout_width="match_parent"
+        android:layout_height="58dp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_below="@+id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header">
+
+        <!--Main Parent Layout-->
+        <LinearLayout
+            android:id="@+id/linearLayout_Parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="7dp"
+            android:orientation="vertical">
+
+            <!--Name Details Layout-->
+            <LinearLayout
+                android:id="@+id/linearLayoutName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical">
+
+                <!-- First Name Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewFirstName"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.8"
+                        android:paddingLeft="5dp"
+                        android:text="First name" />
+
+                    <EditText
+                        android:id="@+id/editTextFirstName"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.2"
+                        android:background="#FFFFFF"
+                        android:hint="Required"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+                <View style="@style/ViewLine_Style" />
+
+                <!-- Middle Name Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txtViewMiddleName"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.8"
+                        android:paddingLeft="5dp"
+                        android:text="Middle name" />
+
+                    <EditText
+                        android:id="@+id/editTextMiddleName"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.2"
+                        android:background="#FFFFFF"
+                        android:hint="Required"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+                <!--<View
+                    style="@style/ViewLine_Style"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />-->
+
+                <!-- Last Name Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewLastName"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.8"
+                        android:paddingLeft="5dp"
+                        android:text="Last name" />
+
+                    <EditText
+                        android:id="@+id/editTextLastName"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.2"
+                        android:background="#FFFFFF"
+                        android:hint="Required"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--Headline & Region Details-->
+            <LinearLayout
+                android:id="@+id/linearLayoutHeadline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayoutName"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical">
+
+                <!-- Headline Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewHeadline"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:paddingLeft="5dp"
+                        android:text="Headline" />
+
+                    <EditText
+                        android:id="@+id/editTextHeadline"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:background="#FFFFFF"
+                        android:hint="Required"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+                <View style="@style/ViewLine_Style" />
+
+                <!-- Region Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewRegion"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:paddingLeft="5dp"
+                        android:text="Region" />
+
+                    <EditText
+                        android:id="@+id/editTextRegion"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:background="#FFFFFF"
+                        android:hint="Required"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+                <View style="@style/ViewLine_Style" />
+
+                <!-- WorkType Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewWorkType"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:paddingLeft="5dp"
+                        android:text="Work Type" />
+
+                    <EditText
+                        android:id="@+id/editTextWorkType"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:background="#FFFFFF"
+                        android:focusable="false"
+                        android:hint="Select"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+                <View style="@style/ViewLine_Style" />
+
+                <!-- Industry Label -->
+                <LinearLayout
+                    android:id="@+id/Layout_Industry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewIndustry"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.5"
+                        android:paddingLeft="5dp"
+                        android:text="Industry" />
+
+                    <EditText
+                        android:id="@+id/editTextIndustry"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.5"
+                        android:background="#FFFFFF"
+                        android:focusable="false"
+                        android:hint="Select"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Gender & Date Of Birth Details-->
+            <LinearLayout
+                android:id="@+id/linearLayoutGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayoutHeadline"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/card_background"
+                android:orientation="vertical">
+
+                <!-- Gender Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewGender"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.8"
+                        android:paddingLeft="5dp"
+                        android:text="Gender" />
+
+                    <EditText
+                        android:id="@+id/editTextGender"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.2"
+                        android:background="#FFFFFF"
+                        android:focusable="false"
+                        android:hint="Select"
+                        android:paddingLeft="10dp" />
+
+                    <!--<Spinner
+                        android:id="@+id/spinnerGender"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.2"
+                        android:background="#FFFFFF"
+                        android:paddingLeft="10dp"
+                        android:visibility="gone"/>-->
+                </LinearLayout>
+
+                <View style="@style/ViewLine_Style" />
+
+                <!-- Date of Birth Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/txtViewDateofbirth"
+                        style="@style/SmallLabelTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2.8"
+                        android:paddingLeft="5dp"
+                        android:text="Date of birth" />
+
+                    <EditText
+                        android:id="@+id/editTextDateofbirth"
+                        style="@style/EditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7.2"
+                        android:background="#FFFFFF"
+                        android:focusable="false"
+                        android:hint="Required"
+                        android:paddingLeft="10dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Save button -->
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/smallbluebutton"
+                android:text="Save"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

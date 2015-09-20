@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_Background"
+    tools:context="com.home.Home_Search">
+
+    <!--Header-->
+    <include
+        android:id="@+id/header"
+        layout="@layout/header_search_home"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metrics_56" />
+
+    <View
+        android:id="@+id/header_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metrics_4"
+        android:layout_below="@id/header"
+        android:background="@drawable/toolbar_shadow_view" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header_shadow">
+
+        <LinearLayout
+            android:id="@+id/containerSearchResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/metrics_12"
+            android:paddingBottom="@dimen/metrics_16"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlSetPlaces"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/metrics_8"
+                android:background="@drawable/card_background">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    style="@style/BlueMediumText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/tv_Set_Your_Places" />
+
+                <View
+                    android:id="@+id/searchView1"
+                    style="@style/ViewLine_Style"
+                    android:layout_below="@id/tvTitle"
+                    android:layout_marginTop="@dimen/metrics_4" />
+
+                <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+                    android:id="@+id/tvReqReceived"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/searchView1"
+                    android:layout_marginTop="@dimen/metrics_6"
+                    android:text="@string/tv_Set_Your_Places_Tip" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlFewInTrustedNetwork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/metrics_8"
+                android:layout_marginTop="@dimen/metrics_12"
+                android:background="@drawable/card_background">
+
+                <TextView
+                    android:id="@+id/tvTitle2"
+                    style="@style/BlueMediumText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@string/tv_fewcontacts" />
+
+                <View
+                    android:id="@+id/searchView2"
+                    style="@style/ViewLine_Style"
+                    android:layout_below="@id/tvTitle2"
+                    android:layout_marginTop="@dimen/metrics_4" />
+
+                <nectotech.com.plusconnect.extention.utils.CustomTextView.RobotoRegularTextView
+                    android:id="@+id/tvReqReceived2"
+                    style="@style/SmallLabelMultilineTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/searchView2"
+                    android:layout_marginTop="@dimen/metrics_6"
+                    android:text="@string/tv_FewContactsInTN_Tip" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/llFeeds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlSearchResult"
+                android:layout_marginTop="@dimen/metrics_12"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/lvSearchResults"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

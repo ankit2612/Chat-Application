@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="58dp"
+    android:background="@color/header_bg">
+
+    <!--Header Starts-->
+    <ImageButton
+        android:id="@+id/hc_back_ImageButton"
+        android:layout_width="@dimen/metrics_50"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/back_btn"
+        android:src="@drawable/ic_action_back" />
+
+    <com.plusconnect.Views.RoundedImageView
+        android:id="@+id/hc_profile_ImageButton"
+        android:layout_width="@dimen/metrics_36"
+        android:layout_height="@dimen/metrics_36"
+        android:layout_marginRight="@dimen/metrics_16"
+        android:layout_toRightOf="@id/hc_back_ImageButton"
+        android:background="@color/header_bg"
+        android:contentDescription="@string/profile_pic"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_action_profile_img"
+        android:clickable="true"
+        android:layout_marginTop="@dimen/metrics_4"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/hc_profile_ImageButton"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout2">
+
+        <com.plusconnect.Views.RobotoMediumTextView
+            android:id="@+id/hc_user_name_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_name"
+            android:textSize="@dimen/text_12"
+            android:textColor="@color/textColorLightBlack"/>
+
+        <com.plusconnect.Views.RobotoRegularTextView
+            android:id="@+id/hc_last_seen_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/hc_user_name_TextView"
+            android:layout_below="@id/hc_user_name_TextView"
+            android:text="@string/last_seen"
+            android:textSize="@dimen/text_14"
+            android:textColor="@color/textColorDarkGray"/>
+
+    </LinearLayout>
+
+
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/attachmentIv"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_action_content_add_circle"
+
+         />
+    <!--Header Ends-->
+</RelativeLayout>

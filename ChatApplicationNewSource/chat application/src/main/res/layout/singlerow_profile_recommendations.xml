@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    android:background="@drawable/card_background"
+    android:descendantFocusability="beforeDescendants"
+    android:fillViewport="true"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/imgProfileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="5dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_default_profileimage" />
+
+    <TextView
+        android:id="@+id/textViewName_from"
+        style="@style/MediumLabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imgProfileImage"
+        android:padding="3dp"
+        android:text="Vijex" />
+
+    <TextView
+        android:id="@+id/textViewSkill"
+        style="@style/SmallLabelTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewName_from"
+        android:layout_toRightOf="@+id/imgProfileImage"
+        android:padding="3dp"
+        android:singleLine="false"
+        android:text="Senior Android Developer at SimpleMind Technologies"/>
+
+    <TextView
+        android:id="@+id/textViewReviewTime"
+        style="@style/SmallLabelMultilineTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingTop="3dp"
+        android:text="6th April 2014" />
+
+    <View
+        android:id="@+id/viewLine"
+        style="@style/settingViewLine_Style"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textViewSkill" />
+
+    <TextView
+        android:id="@+id/textSkills"
+        style="@style/MediumLabelStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewLine"
+        android:paddingTop="3dp"
+        android:text="Skills Recommended:" />
+
+    <TextView
+        android:id="@+id/textSkillsValues"
+        style="@style/SmallLabelTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textSkills"
+        android:paddingTop="3dp"
+        android:text="Airman|Java Developer|Web Services" />
+
+    <View
+        android:id="@+id/viewLine1"
+        style="@style/settingViewLine_Style"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textSkillsValues" />
+
+    <TextView
+        android:id="@+id/textViewReview"
+        style="@style/SmallLabelTextStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewLine1"
+        android:padding="5dp"
+        android:singleLine="false"
+        android:text="Dexter was the one of vendor for my project.He exceeded all my Expectation.I highly recommend for java project" />
+
+</RelativeLayout>
+
