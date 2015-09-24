@@ -26,6 +26,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -37,6 +38,7 @@ import android.widget.Toast;
 import com.plusconnect.Beans.ChatUserBean;
 import com.plusconnect.Utilities.ApiKeysAndConstants;
 import com.plusconnect.Utilities.PlusConnectUtils;
+import com.plusconnect.Views.OfferLinearLayoutManager;
 import com.rockerhieu.emojicon.EmojiconGridFragment;
 import com.rockerhieu.emojicon.EmojiconsFragment;
 import com.rockerhieu.emojicon.emoji.Emojicon;
@@ -46,6 +48,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
+
+import io.codetail.animation.SupportAnimator;
 
 /**
  * Created by ambesh on 14-09-2015.
@@ -108,7 +112,7 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
         setSupportActionBar(toolbar);
         chatRv= (RecyclerView) findViewById(R.id.chatRv);
 
-        chatRv.setLayoutManager(new LinearLayoutManager(this));
+        chatRv.setLayoutManager(new OfferLinearLayoutManager(this));
 
         emojicons_FrameLayout= (FrameLayout) findViewById(R.id.emojicons_FrameLayout);
         cc_message_box_EditText= (EditText) findViewById(R.id.cc_message_box_EditText);
@@ -203,8 +207,8 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
                     if (cc_multimedia_slider_LinearLayout.getVisibility()==View.GONE){
 
-                        int cy = toolbar.getHeight();
-                        int cx = (int) attachmentIv.getX()+(attachmentIv.getWidth()/2);
+                        int cx = (cc_multimedia_slider_LinearLayout.getLeft() + cc_multimedia_slider_LinearLayout.getRight());
+                        int cy = cc_multimedia_slider_LinearLayout.getTop();
 
                         int finalRadius = Math.max(cc_multimedia_slider_LinearLayout.getWidth()
                                 , cc_multimedia_slider_LinearLayout.getHeight());
@@ -217,11 +221,48 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
                             Animator anim =
                                     ViewAnimationUtils.createCircularReveal(cc_multimedia_slider_LinearLayout, cx, cy, 0, finalRadius);
                             cc_multimedia_slider_LinearLayout.setVisibility(View.VISIBLE);
+                            anim.setInterpolator(new AccelerateDecelerateInterpolator());
+                            anim.setDuration(400);
                             anim.start();
                         }
                         else
                         {
-                            cc_multimedia_slider_LinearLayout.setVisibility(View.VISIBLE);
+
+
+
+
+                            int cy1 = toolbar.getHeight();
+                            int cx1 = (int) attachmentIv.getX()+(attachmentIv.getWidth()/2);
+
+                            int finalRadius1 = Math.max(cc_multimedia_slider_LinearLayout.getWidth()
+                                    , cc_multimedia_slider_LinearLayout.getHeight());
+
+                            SupportAnimator animator =
+                                    io.codetail.animation.ViewAnimationUtils.createCircularReveal(cc_multimedia_slider_LinearLayout, cx1, cy1, 0, finalRadius1);
+                            animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                            animator.setDuration(600);
+                            animator.addListener(new SupportAnimator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart() {
+                                    cc_multimedia_slider_LinearLayout.setVisibility(View.VISIBLE);
+                                }
+
+                                @Override
+                                public void onAnimationEnd() {
+
+                                }
+
+                                @Override
+                                public void onAnimationCancel() {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat() {
+
+                                }
+                            });
+                            animator.start();
 
                         }
 
@@ -229,12 +270,11 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
                     }
                     else {
-                        int cy = toolbar.getHeight();
-                        int cx = (int) attachmentIv.getX()+(attachmentIv.getWidth()/2);
+                        int cx = (cc_multimedia_slider_LinearLayout.getLeft() + cc_multimedia_slider_LinearLayout.getRight());
+                        int cy = cc_multimedia_slider_LinearLayout.getTop();
 
-// get the initial radius for the clipping circle
-                        int initialRadius = cc_multimedia_slider_LinearLayout.getWidth();
-
+                        int initialRadius = Math.max(cc_multimedia_slider_LinearLayout.getWidth()
+                                , cc_multimedia_slider_LinearLayout.getHeight());
 // create the animation (the final radius is zero)
 
                         if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
@@ -254,7 +294,44 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
                             anim.start();
                         }
                         else {
-                            cc_multimedia_slider_LinearLayout.setVisibility(View.GONE);
+
+
+
+                            int cx1 = (cc_multimedia_slider_LinearLayout.getLeft() + cc_multimedia_slider_LinearLayout.getRight());
+                            int cy1 = cc_multimedia_slider_LinearLayout.getTop();
+
+                            int finalRadius1 = Math.max(cc_multimedia_slider_LinearLayout.getWidth()
+                                    , cc_multimedia_slider_LinearLayout.getHeight());
+
+                            SupportAnimator animator =
+                                    io.codetail.animation.ViewAnimationUtils.createCircularReveal(cc_multimedia_slider_LinearLayout, cx1, cy1, 0, finalRadius1);
+                            animator.setInterpolator(new AccelerateDecelerateInterpolator());
+                            animator.setDuration(400);
+                            SupportAnimator animator_reverse = animator.reverse();
+
+                            animator_reverse.addListener(new SupportAnimator.AnimatorListener() {
+                                @Override
+                                public void onAnimationStart() {
+
+                                }
+
+                                @Override
+                                public void onAnimationEnd() {
+                                    cc_multimedia_slider_LinearLayout.setVisibility(View.GONE);
+
+                                }
+
+                                @Override
+                                public void onAnimationCancel() {
+
+                                }
+
+                                @Override
+                                public void onAnimationRepeat() {
+
+                                }
+                            });
+                            animator_reverse.start();
                         }
 
                     }

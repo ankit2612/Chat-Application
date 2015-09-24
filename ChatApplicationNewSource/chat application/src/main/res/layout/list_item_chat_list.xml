@@ -8,9 +8,8 @@
 
     <com.pkmmte.view.CircularImageView
         android:id="@+id/chat_list_profile_image"
-        android:layout_width="@dimen/metrics_60"
-        android:layout_height="@dimen/metrics_60"
-
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="center"
         android:src="@drawable/ic_action_profile_img"
          />
@@ -18,42 +17,46 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/metrics_60"
+        android:orientation="horizontal"
         >
 
 
         <LinearLayout
             android:id="@+id/text_container"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingRight="15dp">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical">
 
                 <com.plusconnect.Views.RobotoMediumTextView
                     android:id="@+id/chat_list_user_name"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
+                    android:gravity="left"
                     android:textSize="@dimen/text_16"
                     android:textColor="@color/textColorLightBlack"
                     />
 
                 <com.plusconnect.Views.RobotoRegularTextView
                     android:id="@+id/chat_list_time_indicator"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
                     android:textSize="@dimen/text_12"
+                    android:gravity="right"
+
                     android:textColor="@color/textColorLightGray"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -108,7 +111,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="@dimen/metrics_1"
-            android:layout_alignParentBottom="true"
+            android:visibility="gone"
             android:background="@color/textColorLight_teice_gray" />
     </LinearLayout>
 
