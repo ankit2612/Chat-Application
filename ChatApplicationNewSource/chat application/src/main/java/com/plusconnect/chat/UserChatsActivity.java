@@ -31,6 +31,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.plusconnect.Beans.ChatUserBean;
@@ -70,6 +71,8 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
             cc_audio_ImageButton,cc_gallery_ImageButton,cc_camera_ImageButton,cc_video_ImageButton;
 
     private String chatTo,chatFrom;
+    private TextView hc_user_name_TextView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,7 +110,6 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
         chatRv.setLayoutManager(new LinearLayoutManager(this));
 
-
         emojicons_FrameLayout= (FrameLayout) findViewById(R.id.emojicons_FrameLayout);
         cc_message_box_EditText= (EditText) findViewById(R.id.cc_message_box_EditText);
         cc_send_ImageButton= (ImageButton) findViewById(R.id.cc_send_ImageButton);
@@ -135,6 +137,8 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
         cc_gallery_ImageButton.setOnClickListener(onClickListener);
 
         View view=getLayoutInflater().inflate(R.layout.header_chat,null);
+        hc_user_name_TextView = (TextView) view.findViewById(R.id.hc_user_name_TextView);
+        hc_user_name_TextView.setText(chatFrom);
         attachmentIv= (ImageView) view.findViewById(R.id.attachmentIv);
         attachmentIv.setOnClickListener(onClickListener);
         hc_back_ImageButton= (ImageButton) view.findViewById(R.id.hc_back_ImageButton);
@@ -199,8 +203,8 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
                     if (cc_multimedia_slider_LinearLayout.getVisibility()==View.GONE){
 
-                        int cx = cc_multimedia_slider_LinearLayout.getWidth() / 2;
-                        int cy = cc_multimedia_slider_LinearLayout.getHeight() / 2;
+                        int cy = toolbar.getHeight();
+                        int cx = (int) attachmentIv.getX()+(attachmentIv.getWidth()/2);
 
                         int finalRadius = Math.max(cc_multimedia_slider_LinearLayout.getWidth()
                                 , cc_multimedia_slider_LinearLayout.getHeight());
@@ -225,8 +229,8 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
                     }
                     else {
-                        int cx = cc_multimedia_slider_LinearLayout.getWidth() / 2;
-                        int cy = cc_multimedia_slider_LinearLayout.getHeight() / 2;
+                        int cy = toolbar.getHeight();
+                        int cx = (int) attachmentIv.getX()+(attachmentIv.getWidth()/2);
 
 // get the initial radius for the clipping circle
                         int initialRadius = cc_multimedia_slider_LinearLayout.getWidth();
@@ -267,11 +271,11 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
                 case R.id.cc_audio_ImageButton:
 
-                    Intent audioIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                    audioIntent.setType("audio/*");
-                    Uri data = Uri.fromFile(getTempFile());
-                    audioIntent.setData(data);
-                    startActivityForResult(Intent.createChooser(audioIntent,UserChatsActivity.this.getString(R.string.textChooseAnAction)), ApiKeysAndConstants.RESPONSE_CODE_OPEN_SOUND);
+//                    Intent audioIntent = new Intent(Intent.ACTION_GET_CONTENT);
+//                    audioIntent.setType("audio/*");
+//                    Uri data = Uri.fromFile(getTempFile());
+//                    audioIntent.setData(data);
+//                    startActivityForResult(Intent.createChooser(audioIntent,UserChatsActivity.this.getString(R.string.textChooseAnAction)), ApiKeysAndConstants.RESPONSE_CODE_OPEN_SOUND);
 
 
                     break;
