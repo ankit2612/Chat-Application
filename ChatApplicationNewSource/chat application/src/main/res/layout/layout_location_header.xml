@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:background="@color/header_bg"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+
+
+    >
+
+    <ImageButton
+        android:id="@+id/hc_back_ImageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/back_btn"
+        android:src="@drawable/ic_action_back" />
+
+    <com.plusconnect.Views.RobotoMediumTextView
+        android:id="@+id/hc_user_name_TextView"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:text="@string/textSendLocation"
+        android:ellipsize="end"
+        android:textSize="@dimen/text_12"
+        android:textColor="@color/textColorLightBlack"/>
+
+
+</LinearLayout>

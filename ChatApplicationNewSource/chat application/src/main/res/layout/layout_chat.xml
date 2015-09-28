@@ -4,6 +4,22 @@
     android:layout_height="match_parent">
 
 
+    <include
+        android:id="@+id/noNetworkContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/layout_network_not_avaliable"
+
+        />
+
+
+    <LinearLayout
+        android:id="@+id/chatContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/chatRv"
@@ -15,7 +31,6 @@
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:visibility="gone"
         />
 
@@ -29,5 +44,5 @@
         android:visibility="gone"
         android:layout_gravity="center"
         />
-
+</LinearLayout>
 </FrameLayout>

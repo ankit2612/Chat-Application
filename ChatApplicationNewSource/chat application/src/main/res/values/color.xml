@@ -26,6 +26,10 @@
     <color name="text_startup_page">#616161</color>
     <color name="viewColor">#E0E0E0</color>
     <color name="chatbackground">#FCFCFC</color>
+<color name="transparent">#00FCFCFC</color>
+    <color name="backColorWhite">#FFFFFF</color>
+    <color name="textColorBlack">#818181</color>
+
 
     <!--HOME-->
     <color name="gray_Background">#DFE3E8</color>

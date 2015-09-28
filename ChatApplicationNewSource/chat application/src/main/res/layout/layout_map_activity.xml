@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/metrics_60"
+
+        android:background="@color/header_bg"
+        app:contentInsetStart="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        android:clipToPadding="false"
+
+        />
+
+
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="0dp"
+
+
+        />
+<Button
+    android:id="@+id/sendLocationBtn"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/metrics_36"
+    android:padding="@dimen/metrics_6"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="@string/textSendCurrentLocation"
+    />
+
+
+</LinearLayout>

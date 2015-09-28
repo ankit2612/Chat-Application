@@ -10,4 +10,5 @@
 
     <string name="textFalse">false</string>
     <string name="textTrue">true</string>
+    <string name="google_maps_key">AIzaSyBQLF_usjwwKexxVmv20xBPGpb9xu9dWrs</string>
 </resources>

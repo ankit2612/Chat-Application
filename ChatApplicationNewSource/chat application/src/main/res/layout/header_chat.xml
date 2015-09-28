@@ -1,56 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="58dp"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+
     android:background="@color/header_bg">
 
-    <!--Header Starts-->
+
+    <LinearLayout
+        android:id="@+id/container_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
     <ImageButton
         android:id="@+id/hc_back_ImageButton"
-        android:layout_width="@dimen/metrics_50"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:background="@android:color/transparent"
         android:contentDescription="@string/back_btn"
         android:src="@drawable/ic_action_back" />
 
-    <com.plusconnect.Views.RoundedImageView
+    <com.pkmmte.view.CircularImageView
         android:id="@+id/hc_profile_ImageButton"
-        android:layout_width="@dimen/metrics_36"
-        android:layout_height="@dimen/metrics_36"
+        android:layout_width="@dimen/metric_40"
+        android:layout_height="@dimen/metric_40"
         android:layout_marginRight="@dimen/metrics_16"
-        android:layout_toRightOf="@id/hc_back_ImageButton"
-        android:background="@color/header_bg"
+        app:border="true"
         android:contentDescription="@string/profile_pic"
-        android:layout_centerVertical="true"
         android:src="@drawable/ic_action_profile_img"
-        android:clickable="true"
-        android:layout_marginTop="@dimen/metrics_4"/>
-
+        />
+</LinearLayout>
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/hc_profile_ImageButton"
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:id="@+id/linearLayout2">
 
         <com.plusconnect.Views.RobotoMediumTextView
             android:id="@+id/hc_user_name_TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/user_name"
+            android:singleLine="true"
+            android:ellipsize="end"
             android:textSize="@dimen/text_12"
             android:textColor="@color/textColorLightBlack"/>
 
         <com.plusconnect.Views.RobotoRegularTextView
             android:id="@+id/hc_last_seen_TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/hc_user_name_TextView"
-            android:layout_below="@id/hc_user_name_TextView"
+            android:singleLine="true"
+            android:ellipsize="end"
+
             android:text="@string/last_seen"
             android:textSize="@dimen/text_14"
             android:textColor="@color/textColorDarkGray"/>
@@ -69,5 +76,5 @@
         android:src="@drawable/ic_action_content_add_circle"
 
          />
-    <!--Header Ends-->
-</RelativeLayout>
+
+</LinearLayout>

@@ -24,6 +24,7 @@ import com.plusconnect.Views.RobotoMediumTextView;
 import com.plusconnect.adapter.ChatUserAdapter;
 import com.plusconnect.chat.R;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import java.io.File;
@@ -37,6 +38,8 @@ public class ChatsFragment extends Fragment {
     private RequestQueue requestQueue;
     private ProgressBar progressBar;
     private RobotoMediumTextView errorTv;
+    private View noNetworkContainer,chatContainer;
+    private ImageView refreshIcon;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.layout_chat,container,false);
@@ -46,14 +49,40 @@ public class ChatsFragment extends Fragment {
 
         requestQueue=((PlusConnectApplication)getActivity().getApplication()).getQueue();
 
+        noNetworkContainer=v.findViewById(R.id.noNetworkContainer);
+        chatContainer=v.findViewById(R.id.chatContainer);
 
+        refreshIcon= (ImageView) v.findViewById(R.id.refreshIcon);
+        refreshIcon.setOnClickListener(onClickListener);
+        if (PlusConnectUtils.isNetworkAvailable(getActivity(),false)){
 
+            fetchChatsUserFromServer();
 
-
-        fetchChatsUserFromServer();
+        }
+        else {
+            noNetworkContainer.setVisibility(View.VISIBLE);
+            chatContainer.setVisibility(View.GONE);
+        }
         return v;
     }
 
+
+    private View.OnClickListener onClickListener=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            if (PlusConnectUtils.isNetworkAvailable(getActivity(),false)){
+
+                noNetworkContainer.setVisibility(View.GONE);
+                chatContainer.setVisibility(View.VISIBLE);
+                fetchChatsUserFromServer();
+            }
+            else {
+                noNetworkContainer.setVisibility(View.VISIBLE);
+                chatContainer.setVisibility(View.GONE);
+            }
+        }
+    };
 
 private void fetchChatsUserFromServer(){
 

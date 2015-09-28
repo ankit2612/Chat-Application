@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:gravity="center"
+    android:visibility="gone"
+    android:background="@color/backColorWhite"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/textSizeNoNetwork"
+        android:text="@string/noNetworkText"
+        android:textColor="@color/textColorBlack"
+
+        />
+<ImageView
+    android:id="@+id/refreshIcon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/paddingEditText"
+    android:src="@drawable/refrsh_icon"
+    />
+
+</LinearLayout>

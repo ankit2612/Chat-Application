@@ -26,6 +26,7 @@ import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -59,10 +60,10 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
 
 
-        private Toolbar toolbar;
+    private Toolbar toolbar;
 
 
-        private ImageView attachmentIv;
+    private ImageView attachmentIv;
     private RecyclerView chatRv;
     private FrameLayout emojicons_FrameLayout;
     private EditText cc_message_box_EditText;
@@ -76,6 +77,8 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
     private String chatTo,chatFrom;
     private TextView hc_user_name_TextView;
+    private View chatOptionsVw,chatHeaderVw;
+    private LinearLayout container_image;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -111,9 +114,9 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
         cc_multimedia_slider_LinearLayout.setVisibility(View.GONE);
         setSupportActionBar(toolbar);
         chatRv= (RecyclerView) findViewById(R.id.chatRv);
-
+        container_image= (LinearLayout) findViewById(R.id.container_image);
         chatRv.setLayoutManager(new OfferLinearLayoutManager(this));
-
+        container_image= (LinearLayout) findViewById(R.id.container_image);
         emojicons_FrameLayout= (FrameLayout) findViewById(R.id.emojicons_FrameLayout);
         cc_message_box_EditText= (EditText) findViewById(R.id.cc_message_box_EditText);
         cc_send_ImageButton= (ImageButton) findViewById(R.id.cc_send_ImageButton);
@@ -140,19 +143,27 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
         cc_camera_ImageButton.setOnClickListener(onClickListener);
         cc_gallery_ImageButton.setOnClickListener(onClickListener);
 
-        View view=getLayoutInflater().inflate(R.layout.header_chat,null);
-        hc_user_name_TextView = (TextView) view.findViewById(R.id.hc_user_name_TextView);
+        chatHeaderVw=getLayoutInflater().inflate(R.layout.header_chat,null);
+        chatOptionsVw=getLayoutInflater().inflate(R.layout.layout_header_chat_user,null);
+        hc_user_name_TextView = (TextView) chatHeaderVw.findViewById(R.id.hc_user_name_TextView);
         hc_user_name_TextView.setText(chatFrom);
-        attachmentIv= (ImageView) view.findViewById(R.id.attachmentIv);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+        attachmentIv= (ImageView) chatHeaderVw.findViewById(R.id.attachmentIv);
         attachmentIv.setOnClickListener(onClickListener);
-        hc_back_ImageButton= (ImageButton) view.findViewById(R.id.hc_back_ImageButton);
-        hc_back_ImageButton.setOnClickListener(new View.OnClickListener() {
+
+        container_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        toolbar.addView(view);
+        toolbar.addView(chatHeaderVw,layoutParams);
+
+
 
         initEmojiFragment();
 
@@ -371,6 +382,10 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
                     break;
                 case R.id.cc_location_ImageButton:
+                    Intent locationIntent=new Intent();
+                    startActivityForResult(locationIntent,ApiKeysAndConstants.RESPONSE_CODE_OPEN_LOCATION);
+
+
                     break;
                 case R.id.cc_gallery_ImageButton:
 
@@ -466,6 +481,9 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
             case ApiKeysAndConstants.RESPONSE_CODE_OPEN_VOICE:
                 fetchTheVoice(resultCode,data);
                 break;
+            case ApiKeysAndConstants.RESPONSE_CODE_OPEN_LOCATION:
+                fetchLocation(resultCode,data);
+                break;
 
 
 
@@ -476,6 +494,20 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
     }
 
+    private void fetchLocation(int resultCode, Intent data) {
+
+        if (resultCode==RESULT_OK&&data!=null){
+
+            Bundle bundle=data.getExtras();
+            if (bundle!=null){
+                String lat=bundle.getString(LocationActiivty.LATITUDE,"");
+                String lon=bundle.getString(LocationActiivty.LONGITUDE,"");
+
+
+            }
+
+        }
+    }
 
 
     private void fetchTheVoice(int resultCode,Intent data){

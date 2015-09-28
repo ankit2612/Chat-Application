@@ -1,7 +1,9 @@
 package com.plusconnect.Utilities;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.IntentSender;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -9,12 +11,93 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.plusconnect.chat.R;
 
 /**
  * Created by ambesh on 09-09-2015.
  */
 public class PlusConnectUtils {
+
+
+
+
+
+    public static int GOOGLE_PLAY_SERVICE_CONNECTION_REQUEST_CODE=1;
+
+    public static void onGooglePlayServicesCooncetionFailed(Activity activity,ConnectionResult connectionResult,GoogleApiClient googleApiClient,int requestCode){
+
+        try{
+
+            if(servicesConnected(activity)){
+                if (connectionResult.hasResolution()) {
+                    try {
+
+
+                        // Start an Activity that tries to resolve the error
+                        connectionResult
+                                .startResolutionForResult(
+                                        activity,
+                                        GOOGLE_PLAY_SERVICE_CONNECTION_REQUEST_CODE);
+
+    /*
+     * Thrown if Google Play services canceled the original
+     * PendingIntent
+     */
+
+                    } catch (IntentSender.SendIntentException e) {
+
+                        // Log the error
+                        logException(e);
+                    }
+                } else {
+
+
+                    DialogUtils.showInfoDialog(activity,activity.getString(R.string.cannotConnectToGooglePlayServices));
+
+
+                }
+            }
+
+
+
+        }
+        catch (Exception e){
+            logException(e);
+        }
+
+
+
+    }
+
+    private static boolean servicesConnected(Activity activity) {
+
+        boolean isServiceCOnnected=false;
+
+        int status = GooglePlayServicesUtil.isGooglePlayServicesAvailable(activity);
+
+        // Showing status
+        if(status==ConnectionResult.SUCCESS){
+            isServiceCOnnected=true;
+        }
+        else{
+            Dialog dialog = GooglePlayServicesUtil
+                    .getErrorDialog(status, activity,
+                            GooglePlayServicesUtil.GOOGLE_PLAY_SERVICES_VERSION_CODE);
+            dialog.show();
+
+
+
+        }
+
+        return isServiceCOnnected;
+    }
+
+
+
+
 
 
 

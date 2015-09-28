@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/metrics_80"
 
     android:orientation="horizontal"
     >
 
     <com.pkmmte.view.CircularImageView
         android:id="@+id/chat_list_profile_image"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/metrics_48"
+        android:layout_height="@dimen/metrics_48"
+        app:border="true"
+        app:border_color="@color/transparent"
         android:layout_gravity="center"
         android:src="@drawable/ic_action_profile_img"
          />
 
+
+
     <LinearLayout
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="@dimen/metrics_60"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
         >
 
@@ -29,11 +35,12 @@
             android:layout_centerVertical="true"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingRight="15dp">
+           >
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingRight="15dp"
                 android:gravity="center_vertical">
 
                 <com.plusconnect.Views.RobotoMediumTextView
@@ -61,7 +68,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:paddingRight="15dp"
                 >
 
                 <ImageView
@@ -104,15 +111,15 @@
                     android:textSize="@dimen/text_8" />
 
 
-            </LinearLayout>
 
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/metrics_1"
+                android:background="@color/textColorLight_teice_gray" />
         </LinearLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/metrics_1"
-            android:visibility="gone"
-            android:background="@color/textColorLight_teice_gray" />
+
     </LinearLayout>
 
 
