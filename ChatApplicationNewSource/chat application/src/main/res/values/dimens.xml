@@ -52,6 +52,7 @@
     <dimen name="text_22">22sp</dimen>
     <dimen name="text_40">40sp</dimen>
     <dimen name="metrics_100">100dp</dimen>
+    <dimen name="metrics_120">120dp</dimen>
 
 
 </resources>

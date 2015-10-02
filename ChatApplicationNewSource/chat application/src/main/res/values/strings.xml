@@ -7,13 +7,7 @@
     <string name="action_search">Search</string>
     <string name="action_contacts">Contacts</string>
 
-    <string name="cannotConnectToGooglePlayServices" >Sorry! cannot connect to google play service.</string>
 
-<string name="textUnableToFetchLocation">Unable to fetch the location please try again.</string>
-    <string name="btn_Ok">Ok</string>
-    <string name="btn_Cancel">Cancel</string>
-    <string name="textSendLocation">Send Location</string>
-    <string name="textSendCurrentLocation">Send Current Location</string>
 
     <!--startup page text Start Here-->
     <string name="new_user">New User?</string>
@@ -833,5 +827,24 @@
     <string name="textErrorOccured">Some error occurred</string>
     <string name="speech_prompt">Speak</string>
     <string name="speech_not_supported">Speach not supported</string>
+
+
+
+
+
+
+    <!--New Strings-->
+    <string name="textTitleDownloadignImage">Downloading...</string>
+    <string name="textDownloadingProgress">Map downloading in progress.</string>
+    <string name="cannotConnectToGooglePlayServices" >Sorry! cannot connect to google play service.</string>
+
+    <string name="textUnableToFetchLocation">Unable to fetch the location please try again.</string>
+    <string name="btn_Ok">Ok</string>
+    <string name="btn_Cancel">Cancel</string>
+    <string name="textSendLocation">Send Location</string>
+    <string name="textSendCurrentLocation">Send Current Location</string>
+    <string name="textEnableLocation">Enable Location</string>
+    <string name="textEnableLocationService">Enable Location</string>
+    <string name="textEnableLocationServiceData">Please enable your location services.</string>
 
 </resources>

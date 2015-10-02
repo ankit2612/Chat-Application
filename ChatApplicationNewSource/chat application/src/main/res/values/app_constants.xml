@@ -7,8 +7,18 @@
     <string name="timeStampContant">1441635631876</string>
     <string name="textTick">&#xf00c;</string>
 
-
+    <string name="staticBaseUrl">https://maps.googleapis.com/maps/api/staticmap?</string>
+    <string name="textCenter">center</string>
+    <string name="textSize">size</string>
+    <string name="textMapType">maptype</string>
+    <string name="textZoom">zoom</string>
+    <string name="textMarkers">markers</string>
+    <string name="textKey">key</string>
     <string name="textFalse">false</string>
     <string name="textTrue">true</string>
+    <string name="textSend">sent</string>
+    <string name="textRecive">recive</string>
+
     <string name="google_maps_key">AIzaSyBQLF_usjwwKexxVmv20xBPGpb9xu9dWrs</string>
+    <string name="google_browser_key">AIzaSyDF4pvPC3dArdvg8kVL0qzy04kTV958TR0</string>
 </resources>

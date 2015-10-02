@@ -3,20 +3,26 @@ package com.plusconnect.chat;
 import android.app.Activity;
 import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.provider.Settings;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.plusconnect.Asynctask.IBackgroundTaskInterface;
+import com.plusconnect.Asynctask.StaticMapsAsyncTask;
+import com.plusconnect.Beans.StaticMapRequestBean;
 import com.plusconnect.Utilities.DialogResponseInterface;
 import com.plusconnect.Utilities.DialogUtils;
 import com.plusconnect.Utilities.PlusConnectUtils;
@@ -26,11 +32,20 @@ import com.plusconnect.Utilities.PlusConnectUtils;
  */
 public class LocationActiivty extends ActionBarActivity {
 
+    public static String LATITUDE="latitude";
+
+    public static String LONGITUDE="longitude";
+    public static String SEND_BY ="sentBy";
+    public static String IMAGE_PATH="image_path";
+
     private SupportMapFragment supportMapFragment;
     private FrameLayout mapContainer;
+    private ImageView testImageView;
     private GoogleApiClient googleApiClient;
     private Toolbar tool_bar;
-    private Button sendLocationBtn;
+    private Button sendLocationBtn,enableLocation;
+    private String sendBy;
+    private   Location location;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,14 +54,42 @@ public class LocationActiivty extends ActionBarActivity {
         tool_bar= (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(tool_bar);
         sendLocationBtn= (Button) findViewById(R.id.sendLocationBtn);
+        testImageView= (ImageView) findViewById(R.id.testImageView);
         sendLocationBtn.setOnClickListener(onClickListener);
 
+        enableLocation= (Button) findViewById(R.id.enableLocation);
+        enableLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent viewIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivity(viewIntent);
+            }
+        });
 
+        if (!PlusConnectUtils.isLocationProviderEnabled(LocationActiivty.this,null,false)){
+            enableLocation.setVisibility(View.VISIBLE);
+        }
 
         getSupportActionBar().setDisplayShowHomeEnabled(false);
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-    getSupportActionBar().setCustomView(R.layout.layout_map_activity);
+        View view=getLayoutInflater().inflate(R.layout.layout_location_header,null);
+        view.findViewById(R.id.hc_back_ImageButton).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                setResult(RESULT_CANCELED,null);
+                finish();
+            }
+        });
+    getSupportActionBar().setCustomView(view);
+
+        if (getIntent()!=null){
+            Bundle bundle=getIntent().getExtras();
+            if (bundle!=null){
+                sendBy=bundle.getString(SEND_BY,"");
+            }
+        }
         initliseSupportMapFragment();
         createGoogleApiCLient();
 
@@ -61,6 +104,35 @@ public class LocationActiivty extends ActionBarActivity {
 
     }
 
+
+
+    private IBackgroundTaskInterface staticMapInterface=new IBackgroundTaskInterface() {
+        @Override
+        public void doOnSucess(String... params) {
+
+            if (params!=null&&(params.length!=0)){
+                Intent intent=new Intent();
+                Bundle bundle=new Bundle();
+                bundle.putString(LATITUDE,location.getLatitude()+"");
+                bundle.putString(LONGITUDE,location.getLongitude()+"");
+                bundle.putString(IMAGE_PATH, params[0]);
+                intent.putExtras(bundle);
+
+                setResult(RESULT_OK, intent);
+//                testImageView.setImageURI(Uri.parse(params[0]));
+                finish();
+            }
+
+
+
+        }
+
+        @Override
+        public void doOnError(String errorCode) {
+
+        }
+    };
+
     private void createGoogleApiCLient() {
        googleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(connectionCallbacks)
@@ -73,6 +145,13 @@ public class LocationActiivty extends ActionBarActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        if (PlusConnectUtils.isLocationProviderEnabled(LocationActiivty.this,null,false)){
+            enableLocation.setVisibility(View.GONE);
+        }
+        else {
+            enableLocation.setVisibility(View.VISIBLE);
+        }
+
         if (!googleApiClient.isConnected()){
 
             googleApiClient.reconnect();
@@ -108,9 +187,8 @@ public class LocationActiivty extends ActionBarActivity {
     };
 
 
-    public static String LATITUDE="latitude";
 
-    public static String LONGITUDE="longitude";
+
     private View.OnClickListener onClickListener=new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -121,14 +199,22 @@ public class LocationActiivty extends ActionBarActivity {
                     GoogleMap googleMap=supportMapFragment.getMap();
 
                     if (googleMap!=null){
-                        Location location=googleMap.getMyLocation();
+                        location=googleMap.getMyLocation();
                         if (location!=null){
-                            bundle.putString(LATITUDE,location.getLatitude()+"");
-                            bundle.putString(LONGITUDE, location.getLongitude() + "");
-                            Intent intent=new Intent();
-                            intent.putExtras(bundle);
-                            LocationActiivty.this.setResult(RESULT_OK,intent);
-                            finish();
+
+
+                            StaticMapsAsyncTask staticMapsAsyncTask=new StaticMapsAsyncTask(LocationActiivty.this,sendBy,staticMapInterface);
+                            StaticMapRequestBean staticMapRequestBean=new StaticMapRequestBean();
+                            staticMapRequestBean.setLatitude(location.getLatitude()+"");
+                            staticMapRequestBean.setLongitude(location.getLongitude()+"");
+                            staticMapsAsyncTask.execute(staticMapRequestBean);
+
+//                            bundle.putString(LATITUDE,location.getLatitude()+"");
+//                            bundle.putString(LONGITUDE, location.getLongitude() + "");
+//                            Intent intent=new Intent();
+//                            intent.putExtras(bundle);
+//                            LocationActiivty.this.setResult(RESULT_OK,intent);
+//                            finish();
                         }
 
                     }
@@ -175,6 +261,12 @@ public class LocationActiivty extends ActionBarActivity {
             );
         }
     };
+
+
+
+
+
+
 
 }
 

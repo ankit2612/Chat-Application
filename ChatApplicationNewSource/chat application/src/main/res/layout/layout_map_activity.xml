@@ -4,7 +4,7 @@
 
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+   >
 
 
     <android.support.v7.widget.Toolbar
@@ -29,11 +29,33 @@
         android:layout_height="0dp"
 
 
-        />
+        >
+
+        <Button
+            android:id="@+id/enableLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/metrics_6"
+            android:layout_gravity="top"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/textEnableLocation"
+            />
+
+        <ImageView
+            android:id="@+id/testImageView"
+            android:layout_width="400dp"
+            android:layout_height="200dp"
+            android:layout_gravity="bottom"
+            android:visibility="gone"
+
+            />
+
+    </FrameLayout>
 <Button
     android:id="@+id/sendLocationBtn"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/metrics_36"
+    android:layout_height="wrap_content"
     android:padding="@dimen/metrics_6"
     android:textAppearance="?android:attr/textAppearanceMedium"
     android:text="@string/textSendCurrentLocation"

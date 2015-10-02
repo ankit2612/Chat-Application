@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.IntentSender;
 import android.database.Cursor;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -22,6 +23,43 @@ import com.plusconnect.chat.R;
 public class PlusConnectUtils {
 
 
+
+
+
+
+
+
+    public static boolean isLocationProviderEnabled(Activity activity,DialogResponseInterface dialogInterface,boolean toShowDialog){
+
+        boolean locationEnabled=false;
+        LocationManager locationManager= (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
+
+        if (!locationManager
+                .isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            if(!locationManager
+                    .isProviderEnabled(LocationManager.NETWORK_PROVIDER)){
+                if (toShowDialog)
+                showLocationSettingDialog(activity,dialogInterface);
+                return false;
+
+            }
+
+        }
+
+        return true;
+    }
+
+
+
+
+    private static void showLocationSettingDialog(Activity activity,DialogResponseInterface dialogInterface) {
+
+
+        DialogUtils.showConfirmationDialog(activity,activity.getString(R.string.textEnableLocationService),activity.getString(R.string.textEnableLocationServiceData)
+                ,false,-1,activity.getString(R.string.btn_Ok),activity.getString(R.string.btn_Cancel),dialogInterface);
+
+
+    }
 
 
 

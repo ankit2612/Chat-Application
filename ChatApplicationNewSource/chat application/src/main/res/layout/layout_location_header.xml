@@ -15,6 +15,7 @@
         android:layout_gravity="center_vertical"
         android:background="@android:color/transparent"
         android:contentDescription="@string/back_btn"
+
         android:src="@drawable/ic_action_back" />
 
     <com.plusconnect.Views.RobotoMediumTextView

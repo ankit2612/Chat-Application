@@ -84,6 +84,7 @@ public class ChatsFragment extends Fragment {
         }
     };
 
+    private PlusNetworkCallerRequest plusNetworkCallerRequest;
 private void fetchChatsUserFromServer(){
 
 
@@ -92,12 +93,12 @@ private void fetchChatsUserFromServer(){
             +File.separator+getString(R.string.textUser)+File.separator+"jatin@abc.com"+File.separator+
             getString(R.string.textTime)+File.separator+getString(R.string.timeStampContant);
     if (PlusConnectUtils.isNetworkAvailable(getActivity(),false)){
-
-        requestQueue.add(new
-                PlusNetworkCallerRequest<ChatUserBean>
-                (ChatUserBean[].class,stringRequest,listener,
-                        errorListener,((PlusConnectApplication)getActivity().getApplication()).getGson()
-                ));
+plusNetworkCallerRequest=new
+        PlusNetworkCallerRequest<ChatUserBean>
+        (ChatUserBean[].class,stringRequest,listener,
+                errorListener,((PlusConnectApplication)getActivity().getApplication()).getGson()
+        );
+        requestQueue.add(plusNetworkCallerRequest);
         progressBar.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
 
@@ -107,7 +108,16 @@ private void fetchChatsUserFromServer(){
 
 }
 
- private Response.Listener<ChatUserBean[]> listener=new Response.Listener<ChatUserBean[]>() {
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        if (plusNetworkCallerRequest!=null)
+        requestQueue.cancelAll(plusNetworkCallerRequest);
+        listener=null;
+        errorListener=null;
+    }
+
+    private Response.Listener<ChatUserBean[]> listener=new Response.Listener<ChatUserBean[]>() {
      @Override
      public void onResponse(ChatUserBean[] response) {
 

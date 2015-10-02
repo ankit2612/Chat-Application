@@ -116,7 +116,6 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
         chatRv= (RecyclerView) findViewById(R.id.chatRv);
         container_image= (LinearLayout) findViewById(R.id.container_image);
         chatRv.setLayoutManager(new OfferLinearLayoutManager(this));
-        container_image= (LinearLayout) findViewById(R.id.container_image);
         emojicons_FrameLayout= (FrameLayout) findViewById(R.id.emojicons_FrameLayout);
         cc_message_box_EditText= (EditText) findViewById(R.id.cc_message_box_EditText);
         cc_send_ImageButton= (ImageButton) findViewById(R.id.cc_send_ImageButton);
@@ -154,6 +153,7 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
                 ViewGroup.LayoutParams.MATCH_PARENT);
         attachmentIv= (ImageView) chatHeaderVw.findViewById(R.id.attachmentIv);
         attachmentIv.setOnClickListener(onClickListener);
+        container_image= (LinearLayout) chatHeaderVw.findViewById(R.id.container_image);
 
         container_image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -382,7 +382,8 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
 
                     break;
                 case R.id.cc_location_ImageButton:
-                    Intent locationIntent=new Intent();
+                    Intent locationIntent=new Intent(UserChatsActivity.this,LocationActiivty.class);
+
                     startActivityForResult(locationIntent,ApiKeysAndConstants.RESPONSE_CODE_OPEN_LOCATION);
 
 
@@ -502,7 +503,7 @@ public class UserChatsActivity extends ActionBarActivity implements EmojiconGrid
             if (bundle!=null){
                 String lat=bundle.getString(LocationActiivty.LATITUDE,"");
                 String lon=bundle.getString(LocationActiivty.LONGITUDE,"");
-
+                String imagePath=bundle.getString(LocationActiivty.IMAGE_PATH);
 
             }
 

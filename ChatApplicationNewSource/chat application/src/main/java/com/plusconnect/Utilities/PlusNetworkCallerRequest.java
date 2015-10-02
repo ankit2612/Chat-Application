@@ -50,7 +50,10 @@ public class PlusNetworkCallerRequest<T extends BaseRequestBean> extends Request
     @Override
     protected void deliverResponse(T[] response) {
 
-        listener.onResponse(response);
+            if (listener!=null){
+                listener.onResponse(response);
+            }
+
 
 
     }
